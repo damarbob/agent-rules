@@ -57,6 +57,26 @@ Never add a line that credits a tool, AI or system, and never add a `Co-Authored
 
 Nested folders and sibling clones are often separate git repositories. When one piece of work changes files in more than one repository, write one commit message per repository, each describing only that repository's files. A single message covering both describes a commit that cannot exist. If you are unsure which repository a folder belongs to, run `git rev-parse --show-toplevel` from it.
 
+## Commit Dates
+
+A commit should never be dated before the commit it follows. Git does not enforce this, so a history can show a commit written before its parent, which confuses tools and readers that sort by date.
+
+1. **Check before you commit.** Read the date of the latest commit on the branch with `git log -1 --format=%aI`.
+2. **Commit normally when it is in the past.** If that date is earlier than now, set no date.
+3. **Date yours after it when it is not.** If the latest commit is dated now or later, which happens when a person redated it on purpose, date yours after it. Set `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` to the same value, and let each later commit follow the one before it.
+4. **Size the gap to the change.** Pick `t` minutes: 5 for a small fix or copy tweak, 10 for one piece of a feature, 20 for a larger piece and 60 for a big change that would take real time. If you are unsure, ask. Then use a random gap between 0.75 `t` and 1.25 `t`, worked out to the second and not rounded to whole minutes. Draw the number with the shell's random function instead of choosing one yourself.
+5. **Never pick a future date yourself.** A date ahead of the clock is fine when a person asked for it or the previous commit already has one. If a person gives a date, use it, and say so when it falls before the previous commit.
+6. **Keep the order when you rewrite history.** Amending, rebasing or redating a commit must leave every commit dated after its parent.
+
+With the clock at 2026-10-16 10:42, the rule gives these dates.
+
+| Latest commit | `t` | Date for the new commit |
+| :-- | :-- | :-- |
+| 2026-10-16 03:55:46 | any | none, because it is in the past |
+| 2026-10-17 00:12:13 | 20 | 2026-10-17 00:35:01 |
+| 2026-10-17 00:35:01 | 20 | 2026-10-17 00:58:42 |
+| 2026-10-17 00:58:42 | 10 | 2026-10-17 01:07:40 |
+
 ## Issue References
 
 1. **Never write `#` immediately followed by digits**, in the subject or the body. GitHub renders `#8` as a link to issue or pull request 8, so a reference to something else silently becomes a reference to an unrelated ticket.

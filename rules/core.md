@@ -26,6 +26,7 @@ See [attribution-guide.md](attribution-guide.md).
 3. Keep it brief. One short clause per bullet, and a reason only when it isn't obvious.
 4. Never write `#` followed by digits unless you mean to link that issue or pull request.
 5. Write one message per git repository. Nested folders are often separate repositories.
+6. Never date a commit earlier than the one before it. If that commit is dated now or later, date yours a little after it, as the guide sets out. Never pick a future date yourself.
 
 See [commit-style-guide.md](commit-style-guide.md).
 <!-- /guide -->

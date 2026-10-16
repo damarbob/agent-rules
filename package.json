@@ -1,6 +1,6 @@
 {
   "name": "agent-rules",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared commit, writing and attribution rules for AI coding agents, with a command that copies them into a repository.",
   "keywords": [
     "ai-agents",

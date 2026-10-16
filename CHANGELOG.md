@@ -2,6 +2,16 @@
 
 All notable changes to this project are listed here, following [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). The versioning scheme is described under Versions in the README.
 
+## [1.1.0] - 2026-10-16
+
+### Added
+
+- **Commit dates**:
+  - Added a rule that a commit is never dated before the one it follows.
+  - Dated a commit after one that is ahead of the clock, by a random gap sized to the change.
+  - Barred agents from picking a future date themselves.
+  - Added the rule to `commit-style-guide.md` and to the Commits list in `core.md`.
+
 ## [1.0.0] - 2026-10-16
 
 ### Added
