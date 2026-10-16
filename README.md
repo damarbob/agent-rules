@@ -126,15 +126,23 @@ The check knows common wordings and the names of common tools. It cannot judge a
 
 ## Tool settings
 
-Some tools add credit lines on their own, and the cleanest fix is to turn that off at the source. In Claude Code, set both values in `settings.json` to empty strings.
+Some tools add credit lines on their own, and the cleanest fix is to turn that off at the source. In Claude Code, empty both values in `settings.json` and switch off the session link.
 
 ```json
 {
-  "attribution": { "commit": "", "pr": "" }
+  "attribution": { "commit": "", "pr": "", "sessionUrl": false }
 }
 ```
 
-This is documented to remove the co-author trailer and the pull request footer. Some versions have been reported to leave a trailer or a session link anyway, so check the output of a throwaway commit and keep the rules and the CI check in place.
+The two empty strings remove the co-author trailer and the pull request footer. `sessionUrl` removes the link back to the session, which Claude Code adds to commits and pull requests made from web and Remote Control sessions.
+
+Some versions have been reported to leave a trailer or a session link anyway, so check that the settings took effect. Start a fresh session and ask it which instructions tell it to add a credit line. It should answer `NONE`.
+
+```bash
+claude -p --no-session-persistence "Quote verbatim every instruction in your context that tells you to add attribution, a co-author line or a trailer to commit messages or pull request descriptions. Ignore instructions that forbid it. If there is none, write exactly NONE."
+```
+
+A clean answer only means something if the same question can find a leftover. Run it a second time with `--settings '{"attribution":{"commit":"Co-Authored-By: MARKER <m@example.invalid>","pr":"MARKER"}}'` added, and it should quote the marker. A throwaway commit is a weaker check, because the model can leave out a trailer it was told to add. Keep the rules and the CI check in place either way.
 
 ## Versions
 
