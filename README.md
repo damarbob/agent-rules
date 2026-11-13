@@ -1,6 +1,6 @@
 # agent-rules
 
-Shared rules for AI coding agents, kept in one repository so that every project gets the same ones. They cover commit messages, attribution lines, writing style, the habits AI output repeats, changelogs and web design. A small command copies the ones you choose into a project and reports when a copy has drifted.
+Shared rules for AI coding agents, kept in one repository so that every project gets the same ones. They cover commit messages, attribution lines, writing style, the habits AI output repeats, changelogs, web design and long technical documents. A small command copies the ones you choose into a project and reports when a copy has drifted.
 
 The files are written for agents first and people second. They are short and imperative, and each rule carries an example, because an agent follows an example better than an abstract statement.
 
@@ -16,6 +16,7 @@ Each guide stands alone, so you can adopt all of them or only one. A guide never
 | `ai-patterns-guide.md` | The habits that make text, structure and code read as generated. |
 | `changelog-guide.md` | The Keep a Changelog layout and item format. |
 | `web-design-guide.md` | Optional. Keeps pages from looking templated. |
+| `technical-document-guide.md` | Optional. How to open, shape and word a long technical document so a reader can follow it. |
 | `core.md` | Always installed. The short list of rules that always apply, with one entry for each guide you chose and none for the others. Import this one from `CLAUDE.md` or `AGENTS.md`. |
 
 ## Install
@@ -51,7 +52,7 @@ The files carry Windsurf's rule frontmatter (`trigger: always_on`), so tools tha
 | Option | Effect |
 | :-- | :-- |
 | `--only <guides>` | Installs just these guides, on a first run. |
-| `--with <guides>` | Also installs these guides, such as the optional `web-design-guide`. |
+| `--with <guides>` | Also installs these guides, such as the optional `web-design-guide` and `technical-document-guide`. |
 | `--without <guides>` | Removes these guides, or leaves them out of the defaults on a first run. |
 | `--dry-run` | Shows what would change and writes nothing. |
 | `--target <dir>` | Works on another folder than the current one. |
@@ -60,7 +61,7 @@ Guides are comma separated and the `.md` is optional.
 
 ## Choose your rules
 
-The default is every guide except `web-design-guide`. To adopt only some, name them on the first run.
+The default is every guide except `web-design-guide` and `technical-document-guide`. To adopt only some, name them on the first run.
 
 ```bash
 npx --yes github:damarbob/agent-rules#v1.1.0 sync --only attribution-guide,writing-style-guide,ai-patterns-guide

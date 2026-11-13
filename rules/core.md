@@ -61,3 +61,9 @@ When you create or edit a changelog, read [changelog-guide.md](changelog-guide.m
 
 When you build or restyle a web page, site or interface, read [web-design-guide.md](web-design-guide.md) first, so the result does not look templated.
 <!-- /guide -->
+
+<!-- guide: technical-document-guide.md -->
+## Technical documents
+
+When you write a long technical document, such as a design document, a decision record, a blueprint or a specification, read [technical-document-guide.md](technical-document-guide.md) first, so a reader who was not in the discussion can follow it and review it.
+<!-- /guide -->

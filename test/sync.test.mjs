@@ -266,12 +266,12 @@ test('the core.md template has one section for every guide', () => {
   }
 })
 
-// The 63 ways to choose guides
+// The 127 ways to choose guides
 
 const subsets = Array.from({ length: 2 ** GUIDES.length - 1 }, (_, i) => GUIDES.filter((_, bit) => (i + 1) & (1 << bit)))
 
 test('every selection of guides installs files that stand alone', () => {
-  assert.equal(subsets.length, 63)
+  assert.equal(subsets.length, 127)
   for (const guides of subsets) {
     const label = guides.map(stem).join(' + ')
     const target = fresh()

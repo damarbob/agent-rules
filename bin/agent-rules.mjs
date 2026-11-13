@@ -17,9 +17,9 @@ Usage
   agent-rules check-attribution --range <base>..<head> [--target <dir>]
 
 sync               Copy the shared rules into <dir>/.agent/rules and record them in a lock file.
-                   Every guide except web-design-guide is chosen by default. --only picks the
-                   guides on a first run, and later runs use --with to add one and --without to
-                   remove one. Guides are comma separated, such as --only attribution-guide,writing-style-guide.
+                   Every guide except web-design-guide and technical-document-guide is chosen by
+                   default. --only picks the guides on a first run, and later runs use --with to
+                   add one and --without to remove one. Guides are comma separated, such as --only attribution-guide,writing-style-guide.
                    core.md is always written and lists only the chosen guides.
 check              Fail when a shared rule was edited locally, or, with --latest, is out of date.
 check-attribution  Fail when a commit message or the pull request text (PR_TITLE and PR_BODY)
