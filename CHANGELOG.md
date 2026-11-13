@@ -2,6 +2,16 @@
 
 All notable changes to this project are listed here, following [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). The versioning scheme is described under Versions in the README.
 
+## [1.2.0] - 2026-11-13
+
+### Added
+
+- **Technical document guide**:
+  - Added an optional guide for long technical documents that people review, decide on or build from.
+  - Covered opening with a picture and the decisions to approve, matching the form to the content, one word per meaning and labels that read as the plain sentence.
+  - Covered reasons for rules, quoting values, top-to-bottom diagrams, plain analogies and rewriting from the ideas.
+  - Added its section to `core.md`, listed it in `OPTIONAL_GUIDES`, and raised the guide-combination test to 127.
+
 ## [1.1.0] - 2026-10-16
 
 ### Added
